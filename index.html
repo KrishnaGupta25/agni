@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AGNI — Live DSA in C++ Course | 3-Month Program for College Students</title>
+  <meta name="description" content="AGNI is a 3-month live online DSA in C++ course for college students. Live lectures, structured practice, doubt support and placement-oriented problem solving. Early-bird fee ₹2,999.">
+  <meta name="theme-color" content="#0d0c0b">
+  <link rel="canonical" href="https://agni.example/">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AGNI">
+  <meta property="og:title" content="AGNI — Build Logic. Master DSA.">
+  <meta property="og:description" content="3-month live online DSA in C++ course for college students. Early-bird fee ₹2,999 (regular ₹7,000).">
+  <meta property="og:url" content="https://agni.example/">
+  <meta property="og:image" content="https://agni.example/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AGNI — Build Logic. Master DSA.">
+  <meta name="twitter:description" content="3-month live online DSA in C++ course for college students. Early-bird fee ₹2,999.">
+  <meta name="twitter:image" content="https://agni.example/assets/og-image.png">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "AGNI — DSA in C++ (3-Month Live Program)",
+    "description": "Live online course covering C++ fundamentals, data structures and algorithms, structured practice, doubt support and interview-oriented problem solving.",
+    "provider": { "@type": "Organization", "name": "AGNI" },
+    "offers": { "@type": "Offer", "price": "2999", "priceCurrency": "INR", "category": "Early-bird" },
+    "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "online", "courseWorkload": "P3M" }
+  }
+  </script>
+</head>
+<body>
+  <!-- Icon sprite (Lucide-style, 24px grid, 2px stroke) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+      <symbol id="i-live" viewBox="0 0 24 24"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></symbol>
+      <symbol id="i-list" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol>
+      <symbol id="i-doubt" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></symbol>
+      <symbol id="i-timer" viewBox="0 0 24 24"><path d="M10 2h4"/><path d="m12 14 3-3"/><circle cx="12" cy="14" r="8"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+      <symbol id="i-branch" viewBox="0 0 24 24"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+      <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+      <symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" id="top" data-nav>
+    <div class="container nav__inner">
+      <a href="#home" class="brand" aria-label="AGNI — home">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="7" fill="#ff6b1a"/>
+          <path d="M16 6 25 26h-5.2L16 17l-3.8 9H7Z" fill="#120a05"/>
+          <path d="M16 20.5 18.2 26h-4.4Z" fill="#120a05" opacity=".55"/>
+        </svg>
+        <span class="brand__word">AGNI</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#home" data-spy="home">Home</a>
+        <a href="#why" data-spy="why">Why AGNI</a>
+        <a href="#curriculum" data-spy="curriculum">Curriculum</a>
+        <a href="#mentors" data-spy="mentors">Mentors</a>
+        <a href="#faqs" data-spy="faqs">FAQs</a>
+        <a href="#contact" data-spy="contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="btn btn--primary btn--sm nav__cta">Enquire Now</a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-menu-toggle>
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden data-menu>
+      <nav class="container mobile-menu__inner" aria-label="Mobile">
+        <a href="#home"><span>01</span>Home</a>
+        <a href="#why"><span>02</span>Why AGNI</a>
+        <a href="#curriculum"><span>03</span>Curriculum</a>
+        <a href="#mentors"><span>04</span>Mentors</a>
+        <a href="#faqs"><span>05</span>FAQs</a>
+        <a href="#contact"><span>06</span>Contact</a>
+        <a href="#contact" class="btn btn--primary btn--block">Enquire Now <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="grid-bg" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="label"><span class="label__dot" aria-hidden="true"></span>Online DSA in C++ <span class="label__sep">|</span> 3-Month Program</p>
+          <h1 id="hero-title" class="hero__title">
+            Crack DSA.<br>
+            <span class="accent">Build Your Edge.</span><br>
+            Get Placement Ready.
+          </h1>
+          <p class="hero__lead">Master C++ and Data Structures &amp; Algorithms through live online lectures, structured practice and mentor guidance. Build problem-solving skills that help you prepare for coding interviews, internships and software engineering placements.</p>
+
+          <div class="hero__ctas">
+            <a href="#contact" class="btn btn--primary btn--lg">Enquire Now <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <a href="#curriculum" class="btn btn--ghost btn--lg">Explore Curriculum</a>
+          </div>
+
+          <ul class="hero__highlights">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-live"/></svg>Live interactive lectures</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg>Structured DSA practice</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg>Placement &amp; internship preparation</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual">
+          <figure class="editor" aria-label="Example C++ code: binary search on answers, taught in Month 3">
+            <div class="editor__bar">
+              <span class="editor__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="editor__file">allocate_books.cpp</span>
+              <span class="editor__tag">Month 03</span>
+            </div>
+<pre class="editor__code"><code><span class="c">// Binary Search on Answers</span>
+<span class="k">int</span> lo = <span class="n">1</span>, hi = total, ans = <span class="n">-1</span>;
+<span class="k">while</span> (lo &lt;= hi) {
+    <span class="k">int</span> mid = lo + (hi - lo) / <span class="n">2</span>;
+    <span class="k">if</span> (<span class="f">canAllocate</span>(pages, k, mid)) {
+        ans = mid;    <span class="c">// feasible — try smaller</span>
+        hi  = mid - <span class="n">1</span>;
+    } <span class="k">else</span> lo = mid + <span class="n">1</span>;
+}</code></pre>
+            <div class="arrayviz" aria-hidden="true">
+              <div class="arrayviz__cells">
+                <span>12</span><span>18</span><span>24</span><span class="is-mid">31</span><span>37</span><span>45</span><span>52</span><span>60</span>
+              </div>
+              <div class="arrayviz__ptrs">
+                <span style="--i:0">lo</span><span style="--i:3" class="is-mid">mid</span><span style="--i:7">hi</span>
+              </div>
+            </div>
+            <figcaption class="editor__foot">
+              <span><svg class="icon icon--xs" aria-hidden="true"><use href="#i-gauge"/></svg>O(n · log S)</span>
+              <span class="editor__status">compiled · g++ -std=c++17</span>
+            </figcaption>
+          </figure>
+
+          <!-- Hero pricing panel -->
+          <aside class="price-panel" aria-label="Course fee">
+            <div class="price-panel__head">
+              <span class="badge">Limited-period early-bird offer</span>
+            </div>
+            <div class="price-panel__rows">
+              <div class="price-panel__row">
+                <span class="price-panel__k">Regular fee</span>
+                <s class="price-panel__old" data-price="regular">₹7,000</s>
+              </div>
+              <div class="price-panel__row price-panel__row--main">
+                <span class="price-panel__k">Early-bird offer</span>
+                <strong class="price-panel__new" data-price="early">₹2,999</strong>
+              </div>
+            </div>
+            <a href="#pricing" class="price-panel__link">See what's included <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATEMENT BAND ============ -->
+    <section class="statement" aria-label="Our promise">
+      <div class="container statement__inner">
+        <p class="statement__tag mono">Build Logic. Master DSA.</p>
+        <p class="statement__text">From Learning to Problem Solving.<br><span>From College to Career.</span></p>
+      </div>
+    </section>
+
+    <!-- ============ WHY AGNI ============ -->
+    <section class="section" id="why" aria-labelledby="why-title">
+      <div class="container why">
+        <div class="why__intro">
+          <p class="eyebrow"><span>01</span>Why AGNI</p>
+          <h2 id="why-title" class="h2">Learn DSA From Students Who Understand Your Journey.</h2>
+          <p class="lead">AGNI is built to make DSA approachable for college students preparing for technical interviews. We teach the way we wish we had been taught — clear fundamentals first, then patterns, then plenty of practice — around the realities of a college timetable.</p>
+          <a href="#format" class="text-link">How classes work <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
+        </div>
+
+        <ol class="benefits">
+          <li class="benefit"><span class="benefit__n mono">01</span><h3>Beginner-friendly C++ &amp; DSA</h3><p>Start from C++ fundamentals; no advanced DSA background required.</p></li>
+          <li class="benefit"><span class="benefit__n mono">02</span><h3>Live online lectures</h3><p>Taught live by the mentors — not a prerecorded-only course.</p></li>
+          <li class="benefit"><span class="benefit__n mono">03</span><h3>Clear explanations</h3><p>Concepts and problem-solving approaches broken down step by step.</p></li>
+          <li class="benefit"><span class="benefit__n mono">04</span><h3>Structured topic-wise practice</h3><p>Curated questions that reinforce each topic as you learn it.</p></li>
+          <li class="benefit"><span class="benefit__n mono">05</span><h3>Interview problem approach</h3><p>Guidance on how to read, break down and attack coding interview problems.</p></li>
+          <li class="benefit"><span class="benefit__n mono">06</span><h3>Doubt-solving support</h3><p>Get help with the concepts and problems you find difficult.</p></li>
+          <li class="benefit"><span class="benefit__n mono">07</span><h3>Built around college schedules</h3><p>A learning environment designed with students' academic load in mind.</p></li>
+          <li class="benefit"><span class="benefit__n mono">08</span><h3>Coding-round preparation</h3><p>Focused preparation for internship and placement coding rounds.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ COURSE FORMAT ============ -->
+    <section class="section section--alt" id="format" aria-labelledby="format-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow"><span>02</span>Course Format</p>
+          <h2 id="format-title" class="h2">Learn Live. Practice Consistently. Improve Step by Step.</h2>
+        </div>
+
+        <div class="format">
+          <article class="format__live">
+            <div class="format__top">
+              <span class="pill pill--live"><span class="pulse" aria-hidden="true"></span>Core of the program</span>
+              <svg class="icon icon--lg" aria-hidden="true"><use href="#i-live"/></svg>
+            </div>
+            <h3 class="h3">Live Online Lectures</h3>
+            <p>Interactive classes conducted live by the mentors, with concept explanations, coding demonstrations and problem-solving discussions. Live lectures are the heart of AGNI — you learn in real time and can ask questions as you go.</p>
+
+            <ol class="flow" aria-label="What a live class covers">
+              <li><span class="mono">01</span>Concept explanation</li>
+              <li><span class="mono">02</span>Live coding demo</li>
+              <li><span class="mono">03</span>Problem-solving discussion</li>
+              <li><span class="mono">04</span>Questions &amp; doubts</li>
+            </ol>
+          </article>
+
+          <div class="format__stack">
+            <article class="format__item">
+              <svg class="icon icon--md" aria-hidden="true"><use href="#i-list"/></svg>
+              <div>
+                <h3 class="h4">Structured Practice</h3>
+                <p>Topic-wise coding questions and practice sheets to reinforce concepts learned in class.</p>
+              </div>
+            </article>
+            <article class="format__item">
+              <svg class="icon icon--md" aria-hidden="true"><use href="#i-doubt"/></svg>
+              <div>
+                <h3 class="h4">Doubt Support</h3>
+                <p>Dedicated doubt-solving support so you can discuss concepts and problems you find difficult.</p>
+              </div>
+            </article>
+            <article class="format__item">
+              <svg class="icon icon--md" aria-hidden="true"><use href="#i-timer"/></svg>
+              <div>
+                <h3 class="h4">Interview Preparation</h3>
+                <p>Practice problem-solving patterns and learn how to approach timed coding questions commonly seen in technical interview preparation.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CURRICULUM ============ -->
+    <section class="section" id="curriculum" aria-labelledby="curriculum-title">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <p class="eyebrow"><span>03</span>Curriculum</p>
+            <h2 id="curriculum-title" class="h2">Three Months. One Clear Path.</h2>
+          </div>
+          <p class="lead">From your first C++ program to timed tests and mock interviews — every topic builds on the one before it.</p>
+        </div>
+
+        <nav class="months-nav" aria-label="Jump to month">
+          <a href="#month-1" data-month-link="month-1"><span class="mono">M01</span>Foundations</a>
+          <a href="#month-2" data-month-link="month-2"><span class="mono">M02</span>Core DSA</a>
+          <a href="#month-3" data-month-link="month-3"><span class="mono">M03</span>Searching &amp; Mastery</a>
+        </nav>
+
+        <div class="timeline">
+          <article class="month" id="month-1" data-month>
+            <header class="month__head">
+              <span class="month__num mono">Month 01</span>
+              <h3 class="month__title">Foundations</h3>
+              <p class="month__goal">Build strong programming fundamentals.</p>
+            </header>
+            <ol class="topics">
+              <li><span class="mono">1.1</span>C++ Fundamentals from scratch</li>
+              <li><span class="mono">1.2</span>Input/Output, Data Types and Operators</li>
+              <li><span class="mono">1.3</span>Conditional Statements and Loops</li>
+              <li><span class="mono">1.4</span>Functions and Recursion</li>
+              <li><span class="mono">1.5</span>Arrays and Strings</li>
+              <li><span class="mono">1.6</span>Time and Space Complexity</li>
+              <li><span class="mono">1.7</span>Basic Problem-Solving Practice</li>
+              <li><span class="mono">1.8</span>STL Basics: Vectors, Pairs and related concepts</li>
+            </ol>
+          </article>
+
+          <article class="month" id="month-2" data-month>
+            <header class="month__head">
+              <span class="month__num mono">Month 02</span>
+              <h3 class="month__title">Core DSA</h3>
+              <p class="month__goal">Learn essential data structures and problem-solving patterns.</p>
+            </header>
+            <ol class="topics">
+              <li><span class="mono">2.1</span>Advanced Recursion Problems</li>
+              <li><span class="mono">2.2</span>Linked Lists</li>
+              <li><span class="mono">2.3</span>Stacks and Queues</li>
+              <li><span class="mono">2.4</span>Hashing: Maps and Sets</li>
+              <li><span class="mono">2.5</span>Two Pointers</li>
+              <li><span class="mono">2.6</span>Sliding Window</li>
+              <li><span class="mono">2.7</span>Sorting Techniques</li>
+            </ol>
+          </article>
+
+          <article class="month" id="month-3" data-month>
+            <header class="month__head">
+              <span class="month__num mono">Month 03</span>
+              <h3 class="month__title">Searching &amp; Mastery</h3>
+              <p class="month__goal">Improve problem-solving speed, confidence and interview readiness.</p>
+            </header>
+            <ol class="topics">
+              <li><span class="mono">3.1</span>Binary Search on Answers</li>
+              <li><span class="mono">3.2</span>Heaps and Priority Queues</li>
+              <li><span class="mono">3.3</span>Mixed Problem Practice</li>
+              <li><span class="mono">3.4</span>Topic-wise Revision</li>
+              <li><span class="mono">3.5</span>Timed Tests</li>
+              <li><span class="mono">3.6</span>Mock Interviews and Problem-Solving Sessions</li>
+              <li><span class="mono">3.7</span>Doubt Clearing and Final Revision</li>
+            </ol>
+          </article>
+        </div>
+
+        <p class="note"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-info"/></svg>The exact teaching schedule may be adjusted based on batch progress.</p>
+      </div>
+    </section>
+
+    <!-- ============ MENTORS ============ -->
+    <section class="section section--alt" id="mentors" aria-labelledby="mentors-title">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <p class="eyebrow"><span>04</span>Mentors</p>
+            <h2 id="mentors-title" class="h2">Learn With Mentors Who Have Been in Your Shoes.</h2>
+          </div>
+          <p class="lead">Learn from college students who have spent significant time solving programming problems and understand the challenges students face while learning DSA.</p>
+        </div>
+
+        <div class="mentors">
+          <article class="mentor">
+            <div class="mentor__portrait" role="img" aria-label="Krishna Gupta — initials portrait">
+              <span class="mentor__initials" aria-hidden="true">KG</span>
+              <span class="mentor__corner mono" aria-hidden="true">MENTOR / 01</span>
+            </div>
+            <div class="mentor__body">
+              <h3 class="mentor__name">Krishna Gupta</h3>
+              <p class="mentor__role"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-cap"/></svg>B.Tech · IIIT</p>
+              <dl class="mentor__stats">
+                <div><dt>Programming experience</dt><dd>3+ <small>years</small></dd></div>
+                <div><dt>DSA questions solved</dt><dd>800+</dd></div>
+              </dl>
+              <p class="mentor__focus">Focused on helping students develop structured problem-solving skills.</p>
+              <p class="mentor__fine">Questions solved across programming platforms.</p>
+            </div>
+          </article>
+
+          <article class="mentor">
+            <div class="mentor__portrait" role="img" aria-label="Mohit Ladva — initials portrait">
+              <span class="mentor__initials" aria-hidden="true">ML</span>
+              <span class="mentor__corner mono" aria-hidden="true">MENTOR / 02</span>
+            </div>
+            <div class="mentor__body">
+              <h3 class="mentor__name">Mohit Ladva</h3>
+              <p class="mentor__role"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-cap"/></svg>B.Tech · IIIT</p>
+              <dl class="mentor__stats">
+                <div><dt>Programming experience</dt><dd>3+ <small>years</small></dd></div>
+                <div><dt>DSA questions solved</dt><dd>600+</dd></div>
+              </dl>
+              <p class="mentor__focus">Focused on explaining concepts clearly and building coding confidence.</p>
+              <p class="mentor__fine">Questions solved across programming platforms.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLACEMENT READINESS ============ -->
+    <section class="section" id="placements" aria-labelledby="ready-title">
+      <div class="container ready">
+        <div class="ready__intro">
+          <p class="eyebrow"><span>05</span>Placement &amp; Internship Readiness</p>
+          <h2 id="ready-title" class="h2">Prepare for the Coding Rounds That Matter.</h2>
+          <p class="lead">Build the fundamentals and problem-solving confidence needed to prepare for internship and placement coding rounds. AGNI focuses on the skills those rounds test — clean C++, recognising patterns, reasoning about complexity and solving under time pressure.</p>
+          <p class="disclaimer"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-info"/></svg><span>AGNI helps you prepare. We do not guarantee internships, placements, salary packages or interview selection — outcomes depend on individual effort, skills and hiring processes.</span></p>
+        </div>
+
+        <ol class="ladder" aria-label="What you build towards">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg><div><h3>Stronger programming fundamentals</h3><p>Write correct, readable C++ with confidence.</p></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-branch"/></svg><div><h3>Common DSA patterns</h3><p>Two pointers, sliding window, hashing, recursion, binary search and more.</p></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg><div><h3>Time &amp; space complexity</h3><p>Analyse and justify the efficiency of your solutions.</p></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><div><h3>Structured problem practice</h3><p>Topic-wise coding problems that build depth.</p></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-timer"/></svg><div><h3>Timed problem-solving sessions</h3><p>Practise thinking clearly against the clock.</p></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-doubt"/></svg><div><h3>Mock interview practice</h3><p>Explain your approach out loud, the way interviews expect.</p></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-repeat"/></svg><div><h3>Topic-wise revision</h3><p>Consolidate everything before coding assessments.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="section section--alt" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow"><span>06</span>Course Fee</p>
+          <h2 id="pricing-title" class="h2">One Program. One Simple Fee.</h2>
+        </div>
+
+        <div class="plan">
+          <div class="plan__info">
+            <p class="plan__name mono">AGNI DSA in C++</p>
+            <dl class="plan__facts">
+              <div><dt><svg class="icon icon--sm" aria-hidden="true"><use href="#i-calendar"/></svg>Duration</dt><dd>3 months</dd></div>
+              <div><dt><svg class="icon icon--sm" aria-hidden="true"><use href="#i-live"/></svg>Delivery</dt><dd>Live online lectures</dd></div>
+              <div><dt><svg class="icon icon--sm" aria-hidden="true"><use href="#i-layers"/></svg>Includes</dt><dd>Topic-wise DSA practice, doubt support and placement-oriented problem-solving sessions</dd></div>
+            </dl>
+            <ul class="checks">
+              <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>C++ fundamentals to core DSA</li>
+              <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Timed tests &amp; mock interviews</li>
+              <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Revision &amp; doubt-clearing sessions</li>
+            </ul>
+          </div>
+
+          <div class="plan__price">
+            <span class="badge">Limited-period early-bird offer</span>
+            <div class="plan__amounts">
+              <p class="plan__regular">Regular fee <s data-price="regular">₹7,000</s></p>
+              <p class="plan__early"><span class="sr-only">Early-bird fee: </span><span data-price="early">₹2,999</span></p>
+              <p class="plan__sub">Early-bird fee · one-time</p>
+            </div>
+            <a class="btn btn--primary btn--lg btn--block" href="https://wa.me/919879269578" target="_blank" rel="noopener" data-wa="0" data-wa-msg="earlybird">
+              <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>Claim Early-Bird Offer
+            </a>
+            <p class="plan__fine">Opens WhatsApp with a prefilled message. Payment and enrollment details are shared directly by the AGNI team — no online payment on this site.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faqs" aria-labelledby="faq-title">
+      <div class="container faq">
+        <div class="faq__intro">
+          <p class="eyebrow"><span>07</span>FAQs</p>
+          <h2 id="faq-title" class="h2">Questions, Answered.</h2>
+          <p class="lead">Something else on your mind? Message us and we'll get back to you.</p>
+          <a class="btn btn--ghost" href="https://wa.me/919879269578" target="_blank" rel="noopener" data-wa="0" data-wa-msg="question">
+            <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>Ask on WhatsApp
+          </a>
+        </div>
+
+        <div class="accordion" data-accordion>
+          <details class="qa">
+            <summary><span>Who can join AGNI?</span><svg class="icon qa__icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="qa__a"><p>Students who want to learn C++ and DSA, including beginners willing to practice consistently.</p></div>
+          </details>
+          <details class="qa">
+            <summary><span>Do I need prior DSA knowledge?</span><svg class="icon qa__icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="qa__a"><p>No advanced DSA knowledge is required. The program begins with C++ fundamentals and progresses topic by topic.</p></div>
+          </details>
+          <details class="qa">
+            <summary><span>Are the lectures live?</span><svg class="icon qa__icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="qa__a"><p>Yes. Live online lectures are a core part of the program.</p></div>
+          </details>
+          <details class="qa">
+            <summary><span>How long is the course?</span><svg class="icon qa__icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="qa__a"><p>The program is structured over three months.</p></div>
+          </details>
+          <details class="qa">
+            <summary><span>Will I get practice questions?</span><svg class="icon qa__icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="qa__a"><p>Yes. Topic-wise DSA practice is part of the learning plan.</p></div>
+          </details>
+          <details class="qa">
+            <summary><span>Does the course guarantee placement or internship?</span><svg class="icon qa__icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="qa__a"><p>No. The course is designed to help students prepare, but outcomes depend on individual effort, skills and hiring processes.</p></div>
+          </details>
+          <details class="qa">
+            <summary><span>What is the fee?</span><svg class="icon qa__icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="qa__a"><p>The regular fee is <span data-price="regular">₹7,000</span>, with an early-bird offer of <span data-price="early">₹2,999</span>, subject to the offer terms communicated by AGNI.</p></div>
+          </details>
+          <details class="qa">
+            <summary><span>How do I enroll?</span><svg class="icon qa__icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="qa__a"><p>Contact the AGNI team through WhatsApp or phone for batch dates, payment details and enrollment instructions. <a href="#contact">Go to contact →</a></p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="grid-bg grid-bg--soft" aria-hidden="true"></div>
+      <div class="container">
+        <div class="contact__head">
+          <p class="eyebrow"><span>08</span>Contact</p>
+          <h2 id="contact-title" class="h2 h2--xl">Ready to Start Your <span class="accent">DSA Journey?</span></h2>
+          <p class="lead">Talk to the AGNI team to know more about the batch, class schedule and early-bird offer.</p>
+        </div>
+
+        <div class="contacts">
+          <article class="contact-card">
+            <p class="contact-card__label mono">Line 01</p>
+            <p class="contact-card__num"><a href="tel:+919879269578">+91 98792 69578</a></p>
+            <div class="contact-card__actions">
+              <a class="btn btn--primary" href="https://wa.me/919879269578" target="_blank" rel="noopener" data-wa="0" data-wa-msg="general">
+                <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>Enquire on WhatsApp
+              </a>
+              <a class="btn btn--ghost" href="tel:+919879269578"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Call AGNI</a>
+              <button class="btn btn--icon" type="button" data-copy="9879269578" aria-label="Copy number 9879269578">
+                <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="contact-card">
+            <p class="contact-card__label mono">Line 02</p>
+            <p class="contact-card__num"><a href="tel:+917573814910">+91 75738 14910</a></p>
+            <div class="contact-card__actions">
+              <a class="btn btn--primary" href="https://wa.me/917573814910" target="_blank" rel="noopener" data-wa="1" data-wa-msg="general">
+                <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>Enquire on WhatsApp
+              </a>
+              <a class="btn btn--ghost" href="tel:+917573814910"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Call AGNI</a>
+              <button class="btn btn--icon" type="button" data-copy="7573814910" aria-label="Copy number 7573814910">
+                <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <p class="contact__note">No sign-up, no forms. Message or call us and we'll share batch dates, timings and enrollment steps.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#home" class="brand" aria-label="AGNI — back to top">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="7" fill="#ff6b1a"/>
+            <path d="M16 6 25 26h-5.2L16 17l-3.8 9H7Z" fill="#120a05"/>
+            <path d="M16 20.5 18.2 26h-4.4Z" fill="#120a05" opacity=".55"/>
+          </svg>
+          <span class="brand__word">AGNI</span>
+        </a>
+        <p class="footer__tag">Build Logic. Master DSA.</p>
+        <p class="footer__desc">A 3-month live online DSA in C++ program for college students preparing for coding interviews, internships and placements.</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Footer">
+        <h2 class="footer__h">Explore</h2>
+        <a href="#home">Home</a>
+        <a href="#why">Why AGNI</a>
+        <a href="#format">Course Format</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#mentors">Mentors</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faqs">FAQs</a>
+      </nav>
+
+      <div class="footer__col">
+        <h2 class="footer__h">Contact</h2>
+        <a href="tel:+919879269578">+91 98792 69578</a>
+        <a href="tel:+917573814910">+91 75738 14910</a>
+        <a href="#contact">Enquire Now</a>
+      </div>
+
+      <div class="footer__col">
+        <h2 class="footer__h">Legal</h2>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span data-year>2026</span> AGNI. All rights reserved.</p>
+      <p class="mono">From College to Career.</p>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky CTA -->
+  <div class="sticky-cta" data-sticky-cta aria-hidden="true">
+    <div class="sticky-cta__price"><s data-price="regular">₹7,000</s> <strong data-price="early">₹2,999</strong><span>Early-bird</span></div>
+    <a class="btn btn--primary btn--sm" href="#contact" tabindex="-1">Enquire Now</a>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
